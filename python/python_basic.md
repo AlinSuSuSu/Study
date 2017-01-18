@@ -272,7 +272,7 @@ x[0:2] #(1,2)
 3. 生成器：任何包含yield语句的函数成为生成器。
 
 
-#### 第十章 模块
+#### 第十章 自带电池
 
 1. 模块用于定义：
    ```python
@@ -310,7 +310,37 @@ x[0:2] #(1,2)
     - 使用dir
        ```python
 	   >>>[n for n in dir(pprint) if not n.startswith('_')]
-		['PrettyPrinter', 'isreadable', 'isrecursive', 'pformat', 'pprint', 're', 'saferepr']
+	   ['PrettyPrinter', 'isreadable', 'isrecursive', 'pformat', 'pprint', 're', 'saferepr']
 	   ```
-	- 使用_all_变量。
-	
+	- 使用\__all\__变量。
+	  ```python
+	  >>> pprint.__all__
+	  ['pprint', 'pformat', 'isreadable', 'isrecursive', 'saferepr', 'PrettyPrinter']
+	  ```
+	- 用help获取帮助
+	   ```python
+	   >>> help(pprint.pformat)
+	   Help on function pformat in module pprint:
+
+	   pformat(object, indent=1, width=80, depth=None, *, compact=False)
+	   Format a Python object into a pretty-printed representation.
+	   ```
+    -  文档:查询详细的文档信息。
+		```python
+		>>> print(range.__doc__)
+		range(stop) -> range object
+		range(start, stop[, step]) -> range object
+
+		Return an object that produces a sequence of integers from start (inclusive)
+		to stop (exclusive) by step.  range(i, j) produces i, i+1, i+2, ..., j-1.
+		start defaults to 0, and stop is omitted!  range(4) produces 0, 1, 2, 3.
+		These are exactly the valid indices for a list of 4 elements.
+		When step is given, it specifies the increment (or decrement).
+		```
+	 - 使用源代码，查询模块的源代码在哪里
+	   ```python
+		>>> print(pprint.__file__)
+		D:\installations\Python3_5_2\lib\pprint.py
+	   ```
+	   
+	   
