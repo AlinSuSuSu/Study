@@ -265,3 +265,52 @@ x[0:2] #(1,2)
 
 #### 第八章  异常
 
+#### 构造方法、属性和迭代器
+
+1. 构造方法,将init方法修改为_init_
+2. 迭代器：_iter_
+3. 生成器：任何包含yield语句的函数成为生成器。
+
+
+#### 第十章 模块
+
+1. 模块用于定义：
+   ```python
+   import sys
+   sys.path.append("c:\python")#模块的路径
+   
+   import testmodule
+   testmodule.hello()#调用自己的模块中的hello函数
+   ```
+2. 查询解释器去哪里查找python使用的模块
+	  ```python
+	 >>> import pprint,sys
+	 >>> pprint.pprint(sys.path)
+	  ['',
+	 'D:\\installations\\Python3_5_2\\Lib\\idlelib',
+	 'D:\\installations\\Python3_5_2\\python35.zip',
+	 'D:\\installations\\Python3_5_2\\DLLs',
+	 'D:\\installations\\Python3_5_2\\lib',
+	 'D:\\installations\\Python3_5_2',
+	 'D:\\installations\\Python3_5_2\\lib\\site-packages',
+	 'c:\\python',
+	 'c:\\python',
+	 'c:\\python']
+	  ```
+	  使用sys.path添加不是通用的方法，标注男的实现方法是在PYTHONPATH环境变量中包含模块所在的目录。（在用户环境变量中添加的python解释器路径，多路径用;分隔
+	  
+3. 使用包，包中可包含多个模块。
+    ```python
+	import packagename1
+	import packagename1.module1
+	import packagename1.module2
+	from packagename1 import module3
+	```
+4. 查询模块中有什么
+    - 使用dir
+       ```python
+	   >>>[n for n in dir(pprint) if not n.startswith('_')]
+		['PrettyPrinter', 'isreadable', 'isrecursive', 'pformat', 'pprint', 're', 'saferepr']
+	   ```
+	- 使用_all_变量。
+	
