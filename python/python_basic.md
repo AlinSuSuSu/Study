@@ -342,5 +342,23 @@ x[0:2] #(1,2)
 		>>> print(pprint.__file__)
 		D:\installations\Python3_5_2\lib\pprint.py
 	   ```
-	   
+5. 标准库
+    - sys:能访问于Python解释器联系紧密的变量和函数。
+    
+	 函数变量  |   描述
+	---------  |  --------
+	argv  |  命令行参数，包括脚本名称
+	exit([arg])  | 退出当前程序，可选参数为给定的返回值或者错误信息
+	modules  | 映射模块名字到载入模块的字典
+	path | 查找模块所在目录的目录名列表
+	platform | 类似sunos5或者win32的平台标识符
+	stdin | 标准输入流——一个类文件（file-like）对象
+	stdout | 标准输出流
+	stderr | 标准错误流
+	
+   - os提供了访问多个操作系统服务的功能。
+   - fileinput能够轻松遍历文本中的所有行
+   - 集合、堆和双端队列。
+     - set:
+	
 	   
